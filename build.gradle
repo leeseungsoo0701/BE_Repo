@@ -22,17 +22,21 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.oracle.database.jdbc:ojdbc8'
+//    developmentOnly 'org.springframework.boot:spring-boot-devtools' >> 얘땜에 2번씩 호출됨. 인프런 질문에 있음
+//    runtimeOnly 'com.oracle.database.jdbc:ojdbc8' >>다른db들은 안쓸거임
     runtimeOnly 'mysql:mysql-connector-java'
-    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
-    runtimeOnly 'org.postgresql:postgresql'
+//    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+//    runtimeOnly 'org.postgresql:postgresql'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation group: 'org.json', name: 'json', version: '20160810'
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+
+    testImplementation("org.junit.vintage:junit-vintage-engine") {
+        exclude group: "org.hamcrest", module: "hamcrest-core"
+    }
 }
 
 tasks.named('test') {
