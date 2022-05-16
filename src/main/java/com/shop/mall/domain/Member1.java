@@ -21,7 +21,7 @@ public class Member1 {
     @Embedded
     private Address1 address1;
 
-    @OneToMany(mappedBy = "member1")    //order table의 member2에 참조되었다.
+    @OneToMany(mappedBy = "member1")    //order table의 member1에 참조되었다.
     private List<Order1> orders = new ArrayList<>();
 
 }
