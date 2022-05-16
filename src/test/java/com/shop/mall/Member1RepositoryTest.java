@@ -1,7 +1,7 @@
 package com.shop.mall;
 
 import com.shop.mall.domain.Member1;
-import com.shop.mall.domain.Member2Repository;
+import com.shop.mall.domain.Member1Repository;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @SpringBootTest
 public class Member1RepositoryTest {
     @Autowired
-    Member2Repository member2Repository;
+    Member1Repository member1Repository;
     @Test
     @Transactional  //test에 있으면 db rollback을 해버린다.
     @Rollback(false)
@@ -25,8 +25,8 @@ public class Member1RepositoryTest {
         member1.setUsername("memberA");
 
         //when
-        Long savedid = member2Repository.save(member1);
-        Member1 findMember1 = member2Repository.find(savedid);
+        Long savedid = member1Repository.save(member1);
+        Member1 findMember1 = member1Repository.find(savedid);
 
         //then
         Assertions.assertThat(findMember1.getId()).isEqualTo(member1.getId());

@@ -11,7 +11,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 @Getter @Setter
-public class Order {
+public class Order1 {
 
     @Id
     @GeneratedValue
@@ -22,13 +22,15 @@ public class Order {
     @JoinColumn(name = "member_id")
     private Member1 member1;
 
-    @Embedded
-    private List<OrderItem> orderItems = new ArrayList<>();
+    @OneToMany(mappedBy = "order1")
+    private List<OrderItem1> orderItems1 = new ArrayList<>();
 
-    @Embedded
-    private Delivary delivary;
+    @OneToOne   // one to one의 경우 더 많이 쓸것 같은 곳에 fk를 둔다.
+    @JoinColumn(name = "delivery_id")
+    private Delivery1 delivery1;
 
-    private LocalDateTime orderData;
+    private LocalDateTime orderDate;
 
-    private OrderStatus status;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus1 status;
 }

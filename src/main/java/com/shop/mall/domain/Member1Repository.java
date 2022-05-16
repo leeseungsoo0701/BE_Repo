@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Repository
-public class Member2Repository {
+public class Member1Repository {
 
     @PersistenceContext
     private EntityManager em;       // 스프링부트가 다 만들어줘서 em 생성하는 코드가 필요 없음
