@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 public class Member1Repository {
 
     @PersistenceContext
-    private EntityManager em;       // 스프링부트가 다 만들어줘서 em 생성하는 코드가 필요 없음
+    private EntityManager em;   // 스프링부트가 다 만들어줘서 em 생성하는 코드가 필요 없음
 
     public Long save(Member1 member1){
         em.persist(member1);
