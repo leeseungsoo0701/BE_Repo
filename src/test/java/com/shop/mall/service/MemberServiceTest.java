@@ -423,4 +423,5 @@ public class MemberServiceTest {
         fail("실패의 실패");
 
     }
+    
 }
